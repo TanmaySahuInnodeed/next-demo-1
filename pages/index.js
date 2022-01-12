@@ -15,6 +15,7 @@ export default function Home() {
           <li>
             <Link href='/factorial'>Factorial Calculator</Link>
             <Link href='/about'>About</Link>
+            <Link href='/fetch-data'>Fetch Some Data</Link>
           </li>
         </ul>
       </div>
