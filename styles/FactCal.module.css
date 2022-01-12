@@ -39,3 +39,13 @@
   font-size: 16;
   text-transform: none;
 }
+.links a {
+  color: #0070f3;
+  text-decoration: none;
+  padding: 10px;
+}
+.links a:hover,
+.links a:focus,
+.links a:active {
+  text-decoration: underline;
+}

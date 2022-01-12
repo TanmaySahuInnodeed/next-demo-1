@@ -5,3 +5,13 @@
 .head {
   color: rgb(61, 61, 61);
 }
+.links a {
+  color: #0070f3;
+  text-decoration: none;
+  padding: 10px;
+}
+.links a:hover,
+.links a:focus,
+.links a:active {
+  text-decoration: underline;
+}

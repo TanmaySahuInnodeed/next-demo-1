@@ -1,10 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/About.module.css";
+import Link from "next/link";
 
 export const About = () => {
   return (
     <>
       <Head>About Us</Head>
+      <div className={styles.links}>
+        <Link href="/">Go back to home</Link>
+      </div>
       <div className={styles.container}>
         <h2 className={styles.head}>About Us</h2>
         <p>
