@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+}
+.card {
+  width: 40%;
+  margin-top: 10%;
+  height: fit-content;
+}
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  background-color: #e4e4e4;
+}
+.res {
+  width: 100%;
+  text-align: center;
+  border: 1px dotted black;
+  padding: 5px 15%;
+  margin: 10px auto;
+  white-space: nowrap;
+}
+.num {
+  margin: 10px auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.input {
+  margin: 10px auto;
+  font-size: 18;
+}
+.btn {
+  margin: 10px auto;
+  font-size: 16;
+  text-transform: none;
+}
