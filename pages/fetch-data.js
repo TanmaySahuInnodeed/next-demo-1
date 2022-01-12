@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/About.module.css";
 import Link from "next/link";
 
-export const FetchSomeData = ({ name }) => {
+export const FetchSomeData = ({ email }) => {
   return (
     <>
       <Head>Fetch Data</Head>
@@ -16,20 +16,12 @@ export const FetchSomeData = ({ name }) => {
         <ul>
           <li>
             <div>
-              <h2>Server Side Prop</h2>
-              <h3>{`"${name}"`}</h3>
+              <h2>Static Prop</h2>
+              <h3>{`"${email}"`}</h3>
               <h5>
-                Above data will be fetched from an API whenever this page gets
-                loaded. Reload the page to get different data.
-              </h5>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h2>Server Side Prop</h2>
-              <h3>{`"${name}"`}</h3>
-              <h5>
-                Above data is been fetched from server when this page got loaded
+                Above data will be fetched from an API on the build time of this
+                page however it can be refreshed/reloaded every 10 seconds for
+                new data.
               </h5>
             </div>
           </li>
@@ -40,13 +32,14 @@ export const FetchSomeData = ({ name }) => {
 };
 export default FetchSomeData;
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   // data fetching logic goes here
   let id = Math.floor(Math.random() * 10 + 1);
-  let res = await fetch(`https://reqres.in/api/users/${id}`)
+  let email = await fetch(`https://reqres.in/api/users/${id}`)
     .then((res) => res.json())
     .then((res) => res.data.email);
   return {
-    props: { name: res },
+    props: { email: email },
+    revalidate: 10,
   };
 }
